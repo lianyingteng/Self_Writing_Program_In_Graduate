@@ -25,10 +25,10 @@
 ### 择优与调试
 * [runSvmFindBestFeatureSet.py](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/runSvmFindBestFeatureSet.py)
 **程序说明：** <br>
-> 增一法运行svm，得到最优特征集
+> 增一法运行svm，得到最优特征集 <br>
 **参数说明：**<br>
 > -h 打印程序所需参数 <br>
 > -i 输入文件，svm格式，特征是经过贡献性大小排序的 <br>
 > --cpuNum 程序使用的线程数【默认4】 <br>
 **用法实例：**<br>
-> python runSvmFindBestFeatureSet.py -i featureFile.svm --cpuNum 4
+> python runSvmFindBestFeatureSet.py -i featureFile.svm --cpuNum 4 <br>
