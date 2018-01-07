@@ -19,12 +19,24 @@
 > --pf 需输入的氨基酸的物化属性文件 <br>
 
 **用法实例：**<br>
-> python featureExtraction_for_Phosphorylation.py -i Y_sample.txt -o Y_feature.csv -s Y_sorted_feature.txt --pf physicochemical_properties.txt <br>
+> `python featureExtraction_for_Phosphorylation.py -i Y_sample.txt -o Y_feature.csv -s Y_sorted_feature.txt --pf physicochemical_properties.txt` <br>
 
 
 ### 特征选择
 
 ### 文件格式转化
+
+* [CSVtoSVM.py](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/CSVtoSVM.py) <br>
+
+**程序说明：** <br>
+> `csv文件格式`转化成libsvm可以识别的`svm文件格式` <br>
+
+**参数说明：** <br>
+> -h 打印程序所需参数 <br>
+> -csv 输入文件，csv格式文件 <br>
+
+**用法实例：**<br>
+> `python CSVtoSVM.py -csv featureFile.csv`  默认生成 featureFile.svm <br>
 
 ### 择优与调试
 
@@ -39,4 +51,4 @@
 > --cpuNum 程序使用的线程数【默认4】 <br>
 
 **用法实例：**<br>
-> python runSvmFindBestFeatureSet.py -i featureFile.svm --cpuNum 4 <br>
+> `python runSvmFindBestFeatureSet.py -i featureFile.svm --cpuNum 4` <br>
