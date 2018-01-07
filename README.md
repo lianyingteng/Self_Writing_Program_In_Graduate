@@ -2,7 +2,7 @@
 ---
 `注： 以下所有程序编写时都是基于python3版本， 所以当你使用时均需使用python3版本去执行`
 
-### 特征提取
+### 1.特征提取
 
 * [featureExtraction_for_Phosphorylation.py](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/featureExtraction_for_Phosphorylation.py) <br>
 
@@ -22,9 +22,9 @@
 > `python featureExtraction_for_Phosphorylation.py -i Y_sample.txt -o Y_feature.csv -s Y_sorted_feature.txt --pf physicochemical_properties.txt` <br>
 
 
-### 特征选择
+### 2. 特征选择
 
-### 文件格式转化
+### 3. 文件格式转化
 
 * [CSVtoSVM.py](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/CSVtoSVM.py) <br>
 
@@ -36,9 +36,9 @@
 > -csv 输入文件，csv格式文件 <br>
 
 **用法实例：**<br>
-> `python CSVtoSVM.py -csv featureFile.csv`  默认生成 featureFile.svm <br>
+> `python CSVtoSVM.py -csv featureFile.csv`  注：默认生成 featureFile.svm（输出文件前缀名与输入文件前缀名相同） <br>
 
-### 择优与调试
+### 4. 择优与调试
 
 * [runSvmFindBestFeatureSet.py](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/runSvmFindBestFeatureSet.py) <br>
 
@@ -51,4 +51,4 @@
 > --cpuNum 程序使用的线程数【默认4】 <br>
 
 **用法实例：**<br>
-> `python runSvmFindBestFeatureSet.py -i featureFile.svm --cpuNum 4`  注：线程数最好是4，最大不能超过8，避免影响其他同学使用 <br>
+> `python runSvmFindBestFeatureSet.py -i featureFile.svm --cpuNum 4`   注：线程数最好是4，最大不能超过8，避免影响其他同学使用 <br>
