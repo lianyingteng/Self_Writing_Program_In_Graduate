@@ -52,3 +52,15 @@
 
 **用法实例：**<br>
 > `python runSvmFindBestFeatureSet.py -i featureFile.svm --cpuNum 4`   注：线程数最好是4，最大不能超过8，避免影响其他同学使用 <br>
+
+* [findOptimalParameter.py](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/findOptimalParameter.py) <br>
+
+**程序说明：** <br>
+> 对增一法生成的文件进行搜索，找到最大ACC所对应的行，并且以特征数升序的形式输出到屏幕 <br>
+
+**参数说明：** <br>
+> -h 打印使用方法，以及所有所需参数 <br>
+> i 输入文件增一法生成的结果文件【必选参数】 <br>
+
+**用法实例：**<br>
+> `python findOptimalParameter.py S_feature_result.txt`   注：该文件（S_feature_result.txt）是程序（runSvmFindBestFeatureSet.py）的产出<br>
