@@ -51,4 +51,4 @@
 > --cpuNum 程序使用的线程数【默认4】 <br>
 
 **用法实例：**<br>
-> `python runSvmFindBestFeatureSet.py -i featureFile.svm --cpuNum 4` <br>
+> `python runSvmFindBestFeatureSet.py -i featureFile.svm --cpuNum 4`  注：线程数最好是4，最大不能超过8，避免影响其他同学使用 <br>
