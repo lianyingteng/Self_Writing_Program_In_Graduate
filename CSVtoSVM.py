@@ -7,6 +7,8 @@ Function : Converts the CSV format file to SVM format file!
 """
 
 def generate_svm_file(csv_file, svm_file):
+	"""转换并创建SVM文件
+	"""
     g = open(svm_file,'w')
     f = open(csv_file).readlines()[1:]
 
