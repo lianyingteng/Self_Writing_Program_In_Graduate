@@ -1,4 +1,4 @@
-# 研究生阶段科研方面自写程序【生信】
+# 科研方面自写程序【生信】
 ---
 `注： 以下所有程序编写时都是基于python3版本， 所以当你使用时均需使用python3版本去执行`
 
@@ -37,6 +37,19 @@
 
 **用法实例：**<br>
 > `python CSVtoSVM.py -csv featureFile.csv`  注：默认生成 featureFile.svm（输出文件前缀名与输入文件前缀名相同） <br>
+
+* [SVMtoCSV.py](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/SVMtoCSV.py) <br>
+
+**程序说明：** <br>
+> libsvm可以识别的`svm文件格式`转化成`csv文件格式` <br>
+
+**参数说明：** <br>
+> -h 打印程序所需参数 <br>
+> -svm 输入文件，svm格式文件 <br>
+> -num 特征数，来设定将其多少个特征转换成csv文件 <br>
+
+**用法实例：**<br>
+> `python SVMtoCSV.py -svm featureFile.svm`  注：默认生成 featureFile.csv（输出文件前缀名与输入文件前缀名相同），也可以通过参数 -num 来设定将其多少个特征转换成csv文件 <br>
 
 ### 4. 择优与调试
 
