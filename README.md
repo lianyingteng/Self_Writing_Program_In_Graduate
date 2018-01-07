@@ -2,7 +2,7 @@
 ---
 `注： 以下所有程序编写时都是基于python3版本， 所以当你使用时均需使用python3版本去执行`
 
-### 1.特征提取
+### 1. 特征提取
 
 * [featureExtraction_for_Phosphorylation.py](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/featureExtraction_for_Phosphorylation.py) <br>
 
