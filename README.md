@@ -206,3 +206,15 @@
 
 **用法实例：**<br>
 > `python runSVMFindBestPara.py` <br>
+
+### 5. 程序修改篇
+
+* [svm-zhao.c](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/svm-zhao.c) <br>
+
+**修改说明：** <br>
+> 对libsvm中svm-train.c程序的小改，添加了输出样本`实际标签`和`对应的预测标签`的功能，输出结果保存在`label_output_zhao.txt`。 <br>
+
+* [Makefile](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/Makefile) <br>
+
+**修改说明：** <br>
+> 对libsvm中的编译程序的小改，使得svm-zhao.c可以通过编译生成可执行文件svm-zhao。 <br>
