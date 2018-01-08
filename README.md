@@ -195,3 +195,14 @@
 
 **用法实例：**<br>
 > `python findOptimalParameter.py S_feature_result.txt`   注：该文件（S_feature_result.txt）是程序（runSvmFindBestFeatureSet.py）的产出<br>
+
+* ***~~runSVMFindBestPara.py~~*** <br>
+
+**程序说明：** <br>
+> PseKnc和PseAAC寻找最优参数程序 <br>
+
+**参数说明：** <br>
+> 程序所有参数需进入程序手动改 【建议自己写，不建议使用】 <br>
+
+**用法实例：**<br>
+> `python runSVMFindBestPara.py` <br>
