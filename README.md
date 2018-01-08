@@ -103,14 +103,15 @@
 >> -m MaxC/MinI  
 >>> MaxC表示根据每个三肽在各类中的最大CLs值进行排序[默认] <br>
 >>> MinI表示依据三肽在各类中的最小排序索引值进行排序 <br>
+
 >> -s sortedRank.file  sortedRank.file是排序结果的输出文件名 <br>
 
 > 必选参数： <br>
->> input_filenameList.txt  样本蛋白fasta序列文件的文件名【包含路径】，详见test目录下的相应文件【myPythonScript】
->> output_sortedFeature.csv  排序后的特征文件【csv格式】
+>> pathOfFasta.txt  样本蛋白fasta序列文件的文件名【包含路径】，详见test目录下的相应文件【myPythonScript】 <br>
+>> feature.csv  排序后的特征文件【csv格式】 <br>
 
 **用法实例：**<br>
-> `python BinomialDistribution.py [-m MaxC/MinI][-s sortedRank.file] input_filenameList.txt output_sortedFeature.csv`  <br>
+> `python BinomialDistribution.py [-m MaxC/MinI][-s sortedRank.file] pathOfFasta.txt feature.csv`  <br>
 
 **算法参考** <br>
 > `[1] Zhu, P. P. et al. Predicting the subcellular localization of mycobacterial proteins by incorporating the optimal tripeptides into the general form of pseudo amino acid composition. Molecular bioSystems 11, 558-563, doi:10.1039/c4mb00645c (2015)` <br>
