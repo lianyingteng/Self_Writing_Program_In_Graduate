@@ -21,11 +21,64 @@
 **用法实例：**<br>
 > `python featureExtraction_for_Phosphorylation.py -i Y_sample.txt -o Y_feature.csv -s Y_sorted_feature.txt --pf physicochemical_properties.txt` <br>
 
+* ***~~psekncRna_2type.py~~*** <br>
+
+**程序说明：** <br>
+> 基于RNA的2型PseKnc <br>
+
+**参数说明：** <br>
+> -t  设定PseKNC的类型<br>
+>> 1 -> Type 1 PseKNC 【这个程序没有写】 <br>
+>> 2 -> Type 2 PseKNC.【只有这个程序】 <br>
+
+> -w 伪组分的权重参数，通常设定范围0.1到1 【默认0.5】 <br>
+> -r 位置关联参数 <br>
+> -i 需输入的fasta格式序列文件 <br>
+> -o 输出的csv格式的特征文件 <br>
+
+**用法实例：**<br>
+> `python psekncRna_2type.py -t 2 -w 0.05 -r 100 -i inputFilename -o outputFilename`  <br>
+
+* ***~~PseAAC_2type.py~~*** <br>
+
+**程序说明：** <br>
+> 基于蛋白序列的2型PseAAC（20个氨基酸频率 + 9\*lambda个伪组分） <br>
+
+**参数说明：** <br>
+> -t  设定PseAAC的类型<br>
+>> 1 -> Type 1 PseAAC 【这个程序没有写】 <br>
+>> 2 -> Type 2 PseAAC.【只有这个程序】 <br>
+
+> -w 伪组分的权重参数，通常设定范围0.1到1 【默认0.5】 <br>
+> -r 位置关联参数 <br>
+> -i 需输入的fasta格式序列文件 <br>
+> -o 输出的csv格式的特征文件 <br>
+
+**用法实例：**<br>
+> `python3.4 PseAAC_2type.py -t 2 -w 0.05 -r 100 -i inputFilename -o outputFilename`  <br>
+
+* ***~~PseAAC_2type_diAAC.py~~*** <br>
+
+**程序说明：** <br>
+> 基于蛋白序列的2型PseAAC（400个二肽频率 + 9\*lambda个伪组分） <br>
+
+**参数说明：** <br>
+> -t  设定PseAAC的类型<br>
+>> 1 -> Type 1 PseAAC 【这个程序没有写】 <br>
+>> 2 -> Type 2 PseAAC.【只有这个程序】 <br>
+
+> -w 伪组分的权重参数，通常设定范围0.1到1 【默认0.5】 <br>
+> -r 位置关联参数 <br>
+> -i 需输入的fasta格式序列文件 <br>
+> -o 输出的csv格式的特征文件 <br>
+
+**用法实例：**<br>
+> `python3.4 PseAAC_2type_diAAC.py -t 2 -w 0.05 -r 100 -i inputFilename -o outputFilename`  <br>
 
 
 ### 2. 特征选择
 
-* ANOVA.py <br>
+* ***~~ANOVA.py~~*** <br>
 
 **程序说明：** <br>
 > 使用方差分析思想对输入特征进行共线性大小排序（支持多分类） <br>
@@ -40,19 +93,21 @@
 **算法参考** <br>
 > `[1] Lin, H. et al. Predicting cancerlectins by the optimal g-gap dipeptides. Scientific reports 5, doi:10.1038/srep16964 (2015)` <br>
 
-* BinomialDistribution.py <br>
+* ***~~BinomialDistribution.py~~*** <br>
 
 **程序说明：** <br>
 > 本程序基于二项分布对8000种三肽的特征进行特征选择（支持多分类） <br>
 
 **参数说明：** <br>
 > 可选参数： <br>
->     -m MaxC/MinI  MaxC表示根据每个三肽在各类中的最大CLs值进行排序[默认] <br>
->                   MinI表示依据三肽在各类中的最小排序索引值进行排序 <br>
->     -s sortedRank.file  sortedRank.file是排序结果的输出文件名 <br>
+>> -m MaxC/MinI  
+>>> MaxC表示根据每个三肽在各类中的最大CLs值进行排序[默认] <br>
+>>> MinI表示依据三肽在各类中的最小排序索引值进行排序 <br>
+>> -s sortedRank.file  sortedRank.file是排序结果的输出文件名 <br>
+
 > 必选参数： <br>
->     input_filenameList.txt  样本蛋白fasta序列文件的文件名【包含路径】，详见test目录下的相应文件【myPythonScript】
->     output_sortedFeature.csv  排序后的特征文件【csv格式】
+>> input_filenameList.txt  样本蛋白fasta序列文件的文件名【包含路径】，详见test目录下的相应文件【myPythonScript】
+>> output_sortedFeature.csv  排序后的特征文件【csv格式】
 
 **用法实例：**<br>
 > `python BinomialDistribution.py [-m MaxC/MinI][-s sortedRank.file] input_filenameList.txt output_sortedFeature.csv`  <br>
@@ -74,7 +129,7 @@
 **用法实例：**<br>
 > `python CSVtoSVM.py -csv featureFile.csv`  注：默认生成 featureFile.svm（输出文件前缀名与输入文件前缀名相同） <br>
 
-* SVMtoCSV.py <br>
+* ***~~SVMtoCSV.py~~*** <br>
 
 **程序说明：** <br>
 > libsvm可以识别的`svm文件格式`转化成`csv文件格式` <br>
@@ -87,28 +142,28 @@
 **用法实例：**<br>
 > `python SVMtoCSV.py -svm featureFile.svm`  注：默认生成 featureFile.csv（输出文件前缀名与输入文件前缀名相同），也可以通过参数 -num 来设定将其多少个特征转换成csv文件 <br>
 
-* ANOVAtoSVM.py <br>
+* ***~~ANOVAtoSVM.py~~*** <br>
 
 **程序说明：** <br>
 > 将ANOVA的排序结果转化成SVM文件 <br>
 
 **参数说明：** <br>
 > 两个必选参数： 
-> 1) 程序（ANOVA.py）输出的特征排序文件，对应于用法实例中的result.anova
-> 2) 程序（ANOVA.py）输入的csv文件，对应于用法实例中的test.csv
+>> 程序（ANOVA.py）输出的特征排序文件，对应于用法实例中的result.anova
+>> 程序（ANOVA.py）输入的csv文件，对应于用法实例中的test.csv
 
 **用法实例：**<br>
 > `python ANOVAtoSVN.py result.anova  test.csv` <br>
 
-* MRMRtoSVM.py <br>
+* ***~~MRMRtoSVM.py~~*** <br>
 
 **程序说明：** <br>
 > 将mRMR的排序结果转化成SVM文件 <br>
 
 **参数说明：** <br>
 > 两个必选参数： 
-> 1) 程序（MRMR）输出的特征排序文件，对应于用法实例中的result.mrmr
-> 2) 程序（MRMR）输入的csv文件，对应于用法实例中的test.csv
+>> 程序（MRMR）输出的特征排序文件，对应于用法实例中的result.mrmr
+>> 程序（MRMR）输入的csv文件，对应于用法实例中的test.csv
 
 **用法实例：**<br>
 > `python MRMRtoSVM.py result.mrmr  test.csv` <br>
