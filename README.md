@@ -2,7 +2,7 @@
 ---
 `注： 以下所有程序编写时都是基于python3版本， 所以当你使用时均需使用python3版本去执行`
 
-### 1. 特征提取
+## 1. 特征提取
 
 * [featureExtraction_for_Phosphorylation.py](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/featureExtraction_for_Phosphorylation.py) <br>
 
@@ -76,7 +76,7 @@
 > `python3.4 PseAAC_2type_diAAC.py -t 2 -w 0.05 -r 100 -i inputFilename -o outputFilename`  <br>
 
 
-### 2. 特征选择
+## 2. 特征选择
 
 * ***~~ANOVA.py~~*** <br>
 
@@ -116,7 +116,7 @@
 **算法参考** <br>
 > `[1] Zhu, P. P. et al. Predicting the subcellular localization of mycobacterial proteins by incorporating the optimal tripeptides into the general form of pseudo amino acid composition. Molecular bioSystems 11, 558-563, doi:10.1039/c4mb00645c (2015)` <br>
 
-### 3. 文件格式转化
+## 3. 文件格式转化
 
 * [CSVtoSVM.py](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/CSVtoSVM.py) <br>
 
@@ -169,7 +169,7 @@
 **用法实例：**<br>
 > `python MRMRtoSVM.py result.mrmr  test.csv` <br>
 
-### 4. 择优与调试
+## 4. 择优与调试
 
 * [runSvmFindBestFeatureSet.py](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/runSvmFindBestFeatureSet.py) <br>
 
@@ -207,7 +207,7 @@
 **用法实例：**<br>
 > `python runSVMFindBestPara.py` <br>
 
-### 5. 程序修改篇
+## 5. 程序修改篇
 
 * [svm-zhao.c](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/svm-zhao.c) <br>
 
