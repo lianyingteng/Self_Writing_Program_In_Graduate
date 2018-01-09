@@ -149,9 +149,9 @@
 > 将ANOVA的排序结果转化成SVM文件 <br>
 
 **参数说明：** <br>
-> 两个必选参数： 
->> 程序（ANOVA.py）输出的特征排序文件，对应于用法实例中的result.anova
->> 程序（ANOVA.py）输入的csv文件，对应于用法实例中的test.csv
+> 两个必选参数： <br>
+>> 程序（ANOVA.py）输出的特征排序文件，对应于用法实例中的result.anova <br>
+>> 程序（ANOVA.py）输入的csv文件，对应于用法实例中的test.csv <br>
 
 **用法实例：**<br>
 > `python ANOVAtoSVN.py result.anova  test.csv` <br>
@@ -162,9 +162,9 @@
 > 将mRMR的排序结果转化成SVM文件 <br>
 
 **参数说明：** <br>
-> 两个必选参数： 
->> 程序（MRMR）输出的特征排序文件，对应于用法实例中的result.mrmr
->> 程序（MRMR）输入的csv文件，对应于用法实例中的test.csv
+> 两个必选参数： <br>
+>> 程序（MRMR）输出的特征排序文件，对应于用法实例中的result.mrmr<br>
+>> 程序（MRMR）输入的csv文件，对应于用法实例中的test.csv<br>
 
 **用法实例：**<br>
 > `python MRMRtoSVM.py result.mrmr  test.csv` <br>
