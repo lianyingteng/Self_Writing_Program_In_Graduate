@@ -28,39 +28,42 @@ def detectingPythonVersionAndOutputHelpInfo():
 	else:
 		pass
 
-	try:
-		if sys.argv[1] == "--help":
-			printHelpInfo()
-		else:
-			pass
-	except:
-		printHelpInfo()
-
-def obtainExternalParameters():
-	try:
-		if sys.argv[1] == "-t":
-			typeOfPseAAC = int(sys.argv[2])
-		else:
-			assert 0
-		if sys.argv[3] == "-w":
-			weightFactor = float(sys.argv[4])
-		else:
-			assert 0
-		if sys.argv[5] == "-r":
-			lambdaPara = int(sys.argv[6])
-		else:
-			assert 0
-		if sys.argv[7] == "-i":
-			in_filename = sys.argv[8]
-		else:
-			assert 0
-		if sys.argv[9] == "-o":
-			out_filename = sys.argv[10]
-		else:
-			assert 0
-	except:
-			printHelpInfo()
-	return typeOfPseAAC, weightFactor, lambdaPara, in_filename, out_filename
+def argsParser():
+	"""参数获取
+	"""
+	parser = argparse.ArgumentParser()
+	parser.add_argument(
+		"-t",
+		type=int,
+		default=2,
+		help="PseAAC类型 【超参数】"
+		)
+	parser.add_argument(
+		"-w",
+		type=float,
+		default=0.5,
+		help="伪组分权重 【超参数】"
+		)
+	parser.add_argument(
+		"-r",
+		type=int,
+		default=30,
+		help="lambda参数 【超参数】"
+		)
+	parser.add_argument(
+		"-i",
+		type=str,
+		default="mergeSampleFile.txt",
+		help="蛋白序列文件 【输入】"
+		)
+	parser.add_argument(
+		"-o",
+		type=str,
+		default="output_CSV.csv",
+		help="输出结果文件csv 【输出】"
+		)
+	args = parser.parse_args()
+	return args.t, args.w, args.r, args.i, args.o
 
 
 def detectingTheRationalityOfLambdaPara(in_file, lambdaPara):
@@ -75,7 +78,7 @@ def detectingTheRationalityOfLambdaPara(in_file, lambdaPara):
 
 	seqMinLen = min(seqLens)
 	if lambdaPara > (seqMinLen-1):
-		print("Parameter Error : The Lambda Parameter must samller than L-1!")
+		print("Parameter Error : The Lambda Parameter must smaller than L-1!")
 		exit(0)
 
 
@@ -121,14 +124,15 @@ def generateCsvFormatNoteLineType2(lambdaPara, aminoAcid, phyChemList):
 def obtainSequenceAllDiAAC(sequence):
 	content = []
 	for i in range(len(sequence)-1):
-		content.append(sequence[i:i+1])
+		content.append(sequence[i:i+2])
 	return content
 
-def calculateOccurenceFrequencyOfAminoAcid(sequence, aminoAcid):
+def calculateOccurenceFrequencyOfAminoAcid(sequence, diAAC):
 	occurfrequency = dict()
 	sequences = obtainSequenceAllDiAAC(sequence)
+	
 	seqLen = len(sequences)
-	for each in aminoAcid:
+	for each in diAAC:
 		eachCount = sequences.count(each)
 		if eachCount == 0:
 			occurfrequency[each] = 0
@@ -169,7 +173,7 @@ def calculateFeatureValueByCorrFactorsDictAndOccurfrequencyType2(corrFactorsDict
 		corrSum += sum(corrFactorsDict[eachkey].values())
 	corrPart = corrSum*weightFact
 	
-	for eachAA in aminoAcid:
+	for eachAA in diAAC:
 		featureValueStr += ',%.6f'%occurfrequency[eachAA]
 
 	for i in range(lambdaPara):
@@ -213,13 +217,14 @@ def generateCsvFormatLinebyType2PseAAC(in_file, out_file, weightFact, lambdaPara
 
 import re
 import sys
+import argparse
 
 detectingPythonVersionAndOutputHelpInfo()
-[typeOfPse, weightFact, lambdaPara, in_file, out_file] = obtainExternalParameters()
+typeOfPse, weightFact, lambdaPara, in_file, out_file = argsParser()
 detectingTheRationalityOfLambdaPara(in_file, lambdaPara)
 
 if __name__ == '__main__':
-	phyChemStandFile = r'/home/zhaoyaw/myPythonScript/featureExtract/standard_value/nine_physicochemical_properties_of_amino_acid_Stand.txt'
+	phyChemStandFile = r'C:\Users\liany\Desktop\myPythonScript\featureExtract/standard_value/nine_physicochemical_properties_of_amino_acid_Stand.txt'
 	[phyChemDict, aminoAcid, phyChemList] = obtainAminoAcidPhysicoChemicalDict(phyChemStandFile)
 
 	if typeOfPse == 1:
