@@ -214,13 +214,18 @@
 
 **参数说明：** <br>
 > 两个必选参数：<br>
+
 >> 样本训练文件名（scale之前文件），如 train.svm <br>
 >> 建模文件名（输出），如 train.model <br>
+
 > 三个可选参数： <br>
+
 >> cost 参数 （-c xx.x） <br>
 >> gamma 参数  （-g xx.x）<br>
 >> 是否得到一个概率模型, 是（-b 1）、否（-b 0） <br>
+
 > 输出有用信息：<br>
+
 >> xx..scaleModel `训练集scale模型` <br>
 >> xx.model `训练所得模型` <br>
 
