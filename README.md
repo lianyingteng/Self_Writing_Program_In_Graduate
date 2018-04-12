@@ -207,6 +207,26 @@
 **用法实例：**<br>
 > `python runSVMFindBestPara.py` <br>
 
+* [buildModel_libsvm_ByWindow](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate/blob/master/buildModel_libsvm_ByWindow.py) <br>
+
+**程序说明：** <br>
+> window系统下libsvm建模程序 <br>
+
+**参数说明：** <br>
+> 两个必选参数：<br>
+>> 样本训练文件名（scale之前文件），如 train.svm <br>
+>> 建模文件名（输出），如 train.model <br>
+> 三个可选参数： <br>
+>> cost 参数 （-c xx.x） <br>
+>> gamma 参数  （-g xx.x）<br>
+>> 是否得到一个概率模型, 是（-b 1）、否（-b 0） <br>
+> 输出有用信息：<br>
+>> xx..scaleModel `训练集scale模型` <br>
+>> xx.model `训练所得模型` <br>
+
+**用法实例：**<br>
+> `python buildModel_libsvm_ByWindow.py train.svm train.model -c 0.05 -g 0.008 -b 1` <br>
+
 ## 5. 程序修改篇
 
 * [svm-zhao.c](https://github.com/lianyingteng/Self_Writing_Program_In_Graduate-/blob/master/svm-zhao.c) <br>
